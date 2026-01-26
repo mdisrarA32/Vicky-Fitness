@@ -50,7 +50,7 @@ const Trainers = () => {
                             transition={{ duration: 0.5, delay: trainer.id * 0.1 }}
                         >
                             <div className="trainer-image-container">
-                                <img src={trainer.image} alt={trainer.name} className="trainer-image" />
+                                <img src={trainer.image} alt={trainer.name} className="trainer-image" loading="lazy" />
                                 <div className="trainer-overlay">
                                     <div className="social-links">
                                         <a href={trainer.social[0]} className="social-icon"><FaInstagram /></a>

@@ -19,6 +19,16 @@
     }
 }
 
+@media (max-width: 768px) {
+    .contact-form-column {
+        padding: 25px;
+    }
+
+    .contact-page {
+        padding-top: 100px;
+    }
+}
+
 /* Left Column Styling */
 .section-header.left-align {
     text-align: left;

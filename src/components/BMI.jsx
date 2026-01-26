@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './BMI.css';
 
+import heroBg from '../assets/hero_bg.png';
+
 const BMI = () => {
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
@@ -24,7 +26,8 @@ const BMI = () => {
 
     return (
         <section className="bmi-section" id="bmi">
-            <div className="container video-container"> {/* Assuming background image/video logic similar to others */}
+            <img src={heroBg} alt="Background" className="bmi-bg-img" />
+            <div className="container video-container">
                 <div className="bmi-wrapper">
                     <motion.div
                         className="bmi-text"

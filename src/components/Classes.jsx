@@ -123,7 +123,7 @@ const Classes = () => {
                         className={`class-row ${index % 2 !== 0 ? 'reverse' : ''}`}
                         initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="class-text-side">
@@ -147,10 +147,12 @@ const Classes = () => {
                         </div>
 
                         <div className="class-image-side">
-                            <div
+                            <img
+                                src={item.image}
+                                alt={item.title}
                                 className="class-image-bg"
-                                style={{ backgroundImage: `url(${item.image})` }}
-                            ></div>
+                                loading="lazy"
+                            />
                         </div>
                     </motion.div>
                 ))}

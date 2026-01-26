@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
@@ -71,8 +72,8 @@ const Navbar = ({ setView, currentView }) => {
                             key={link.name}
                             href={link.href}
                             className={`nav-link ${(currentView === 'blog' && link.name === 'Blog') ||
-                                    (currentView === 'contact' && link.name === 'Contact')
-                                    ? 'active' : ''
+                                (currentView === 'contact' && link.name === 'Contact')
+                                ? 'active' : ''
                                 }`}
                             onClick={(e) => {
                                 e.preventDefault();
@@ -88,7 +89,6 @@ const Navbar = ({ setView, currentView }) => {
                             const pricingElement = document.getElementById('pricing');
                             if (pricingElement) {
                                 pricingElement.scrollIntoView({ behavior: 'smooth' });
-                                // Add flash highlight effect
                                 const cards = document.querySelectorAll('.pricing-card');
                                 cards.forEach(card => card.classList.add('flash-highlight'));
                                 setTimeout(() => {
@@ -99,33 +99,63 @@ const Navbar = ({ setView, currentView }) => {
                     }}>Join Now</button>
                 </div>
 
-                <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <FaTimes /> : <FaBars />}
+                <div className="mobile-toggle" onClick={() => setIsOpen(true)}>
+                    <FaBars />
                 </div>
             </div>
 
             <AnimatePresence>
                 {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="mobile-menu"
-                    >
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                className="mobile-link"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    handleNavClick(link);
-                                }}
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </motion.div>
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            className="mobile-menu-backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
+                        />
+
+                        {/* Drawer */}
+                        <motion.div
+                            className="mobile-menu-drawer"
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        >
+                            <div className="drawer-header">
+                                <h2>Menu</h2>
+                                <button className="close-btn" onClick={() => setIsOpen(false)}>
+                                    <FaTimes />
+                                </button>
+                            </div>
+
+                            <div className="drawer-links">
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        className="mobile-link"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleNavClick(link);
+                                        }}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                                <button className="btn-primary drawer-cta" onClick={() => {
+                                    setIsOpen(false);
+                                    setView('home');
+                                    setTimeout(() => {
+                                        const pricingElement = document.getElementById('pricing');
+                                        if (pricingElement) pricingElement.scrollIntoView({ behavior: 'smooth' });
+                                    }, 100);
+                                }}>Join Now</button>
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>

@@ -57,7 +57,8 @@
 
 @media (max-width: 768px) {
     .gallery-item-scroll {
-        min-width: 300px;
-        height: 200px;
+        min-width: 250px;
+        /* Reduced for better mobile fit */
+        height: 180px;
     }
 }

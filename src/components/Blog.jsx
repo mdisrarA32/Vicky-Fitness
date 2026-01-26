@@ -184,7 +184,7 @@ const Blog = () => {
                                 <div className="blog-date-badge">
                                     <FaCalendarDay /> {post.date}
                                 </div>
-                                <img src={post.image} alt={post.title} />
+                                <img src={post.image} alt={post.title} loading="lazy" />
                                 <div className="blog-overlay"></div>
                             </div>
                             <div className="blog-content">
@@ -224,7 +224,9 @@ const Blog = () => {
                             <button className="close-modal" onClick={() => setSelectedPost(null)}>
                                 <FaTimes />
                             </button>
-                            <div className="blog-modal-image" style={{ backgroundImage: `url(${selectedPost.image})` }}></div>
+                            <div className="blog-modal-image-container">
+                                <img src={selectedPost.image} alt={selectedPost.title} className="blog-modal-img" />
+                            </div>
                             <div className="blog-modal-content">
                                 <div className="blog-meta large">
                                     <span><FaCalendarDay /> {selectedPost.date}</span>

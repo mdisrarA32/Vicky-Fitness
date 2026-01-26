@@ -82,7 +82,9 @@
 
 @media (max-width: 768px) {
     .testimonial-card-move {
-        min-width: 300px;
-        max-width: 300px;
+        min-width: 280px;
+        /* Better fit for small phones */
+        max-width: 280px;
+        padding: 20px;
     }
 }

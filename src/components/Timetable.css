@@ -137,7 +137,7 @@
     color: var(--text-gray);
     margin-bottom: 10px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .usage-guidance li::before {

@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaChartLine, FaAppleAlt, FaDumbbell, FaUsers, FaIdCard } from 'react-icons/fa';
 import img1 from '../assets/hero_bg.png';
@@ -73,10 +74,12 @@ const WhyChooseUs = () => {
                             whileTap="hover" // For mobile
                             animate="rest"
                         >
-                            <div
+                            <img
+                                src={feature.image}
+                                alt={feature.title}
                                 className="feature-bg"
-                                style={{ backgroundImage: `url(${feature.image})` }}
-                            ></div>
+                                loading="lazy"
+                            />
                             <div className="feature-overlay"></div>
 
                             <div className="feature-content">

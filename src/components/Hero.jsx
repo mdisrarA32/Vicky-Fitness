@@ -28,7 +28,8 @@ const Hero = () => {
     };
 
     return (
-        <div className="hero-section" style={{ backgroundImage: `url(${heroBg})` }}>
+        <div className="hero-section">
+            <img src={heroBg} alt="Hero Background" className="hero-bg-img" />
             <div className="overlay"></div>
             <div className="container hero-container">
                 <motion.div

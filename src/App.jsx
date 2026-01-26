@@ -18,6 +18,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import AdminLogin from './components/AdminLogin'
 import AdminDashboard from './components/AdminDashboard'
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -29,42 +30,53 @@ function App() {
         <Navbar setView={setCurrentView} currentView={currentView} />
       )}
 
-      {currentView === 'home' && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Hero />
-          <About />
-          <Classes />
-          <WhyChooseUs />
-          <Timetable />
-          <WorkoutPlans />
-          <BMI />
-          <Trainers />
-          <Pricing />
-          <Testimonials />
-          <Gallery />
-          <Booking />
-        </motion.div>
-      )}
+      <AnimatePresence mode="wait">
+        {currentView === 'home' && (
+          <motion.div
+            key="home"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Hero />
+            <About />
+            <Classes />
+            <WhyChooseUs />
+            <Timetable />
+            <WorkoutPlans />
+            <BMI />
+            <Trainers />
+            <Pricing />
+            <Testimonials />
+            <Gallery />
+            <Booking />
+          </motion.div>
+        )}
 
-      {currentView === 'contact' && (
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Contact />
-        </motion.div>
-      )}
+        {currentView === 'contact' && (
+          <motion.div
+            key="contact"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Contact />
+          </motion.div>
+        )}
 
-      {currentView === 'blog' && (
-        <Blog />
-      )}
+        {currentView === 'blog' && (
+          <motion.div
+            key="blog"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Blog />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {currentView === 'admin-login' && (
         <AdminLogin setView={setCurrentView} />

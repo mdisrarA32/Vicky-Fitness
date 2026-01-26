@@ -227,3 +227,21 @@
         justify-content: space-between;
     }
 }
+
+@media (max-width: 768px) {
+    .booking-content {
+        padding: 25px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .booking-badge {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px;
+    }
+}

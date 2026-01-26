@@ -97,9 +97,10 @@
 .class-image-bg {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
     transition: transform 0.8s ease;
+    display: block;
+    /* Removes image bottom gap */
 }
 
 .class-row:hover .class-image-bg {
@@ -119,6 +120,15 @@
     .class-image-side {
         width: 100%;
         height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .class-image-side {
+        height: 250px;
+        min-height: 250px;
+        display: block;
+        /* Ensure it's not hidden */
     }
 }
 
