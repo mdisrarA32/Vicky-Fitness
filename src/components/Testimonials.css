@@ -1,0 +1,88 @@
+.testimonials-section {
+    padding: 100px 0;
+    background-color: #0d0d0d;
+    overflow: hidden;
+    /* Hide overflow for slider */
+}
+
+.testimonials-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 40px;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.testimonials-track {
+    display: flex;
+    width: fit-content;
+    gap: 30px;
+    padding: 20px 0;
+    /* Hooking into the CSS for easier 'pause on hover' if framer motion is tricky */
+}
+
+
+
+.testimonial-card-move {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    min-width: 350px;
+    max-width: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card-move:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.stars {
+    color: var(--secondary-color);
+    /* Gold/Stars color */
+    display: flex;
+    gap: 3px;
+    font-size: 0.9rem;
+}
+
+.quote-icon-small {
+    color: var(--primary-color);
+    opacity: 0.3;
+    font-size: 1.2rem;
+}
+
+.review-text {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.review-author {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 700;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card-move {
+        min-width: 300px;
+        max-width: 300px;
+    }
+}

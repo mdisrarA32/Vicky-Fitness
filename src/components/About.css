@@ -1,0 +1,146 @@
+.about-section {
+    padding: 100px 0;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+    /* Ensure z-index works */
+    z-index: 1;
+    /* Above Marquee */
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.section-title .accent {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-white);
+}
+
+.about-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+}
+
+.trust-badges {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    /* Add blur for better visibility */
+}
+
+.badge .icon {
+    font-size: 1.5rem;
+}
+
+.badge .icon.google {
+    color: #4285F4;
+}
+
+.badge .icon.star {
+    color: var(--secondary-color);
+}
+
+.badge div {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge strong {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+}
+
+.badge span {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    background: var(--bg-card);
+    padding: 40px;
+    border-left: 4px solid var(--primary-color);
+    position: relative;
+    z-index: 2;
+    /* Ensure stats box is clear */
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 3rem;
+    color: var(--text-white);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 992px) {
+    .about-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .about-text-content {
+        width: 50%;
+    }
+
+    .about-stats {
+        width: 45%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-badges {
+        flex-direction: column;
+    }
+}

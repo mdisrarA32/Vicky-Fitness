@@ -1,0 +1,212 @@
+.contact-page {
+    padding: 120px 0 80px;
+    /* Added top padding for navbar */
+    background-color: var(--bg-dark);
+    min-height: 100vh;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+}
+
+/* Left Column Styling */
+.section-header.left-align {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.contact-desc {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.detail-item.action-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail-item.action-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 50, 50, 0.3);
+    transform: translateX(5px);
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 50, 50, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.detail-item:hover .icon-box {
+    background: var(--primary-color);
+    color: #fff;
+    transform: rotate(10deg);
+}
+
+/* Specific icon colors */
+.icon-box.whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+}
+
+.detail-item:hover .icon-box.whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+.icon-box.email {
+    background: rgba(52, 183, 241, 0.1);
+    color: #34B7F1;
+}
+
+.detail-item:hover .icon-box.email {
+    background: #34B7F1;
+    color: #fff;
+}
+
+.icon-box.instagram {
+    background: rgba(193, 53, 132, 0.1);
+    color: #C13584;
+}
+
+.detail-item:hover .icon-box.instagram {
+    background: #C13584;
+    color: #fff;
+}
+
+
+.detail-item h4 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.detail-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.map-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Right Column: Form Styling */
+.contact-form-column {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    height: fit-content;
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    color: var(--text-white);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 15px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: var(--text-white);
+    font-family: var(--font-body);
+    outline: none;
+    transition: all 0.3s;
+    font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    border-color: var(--primary-color);
+    background: #151515;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.success-message {
+    background: rgba(37, 211, 102, 0.2);
+    color: #25D366;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+    font-weight: 600;
+}
+
+.btn-primary.full-width {
+    width: 100%;
+    margin-top: 10px;
+    padding: 18px;
+    font-size: 1.1rem;
+}

@@ -1,0 +1,160 @@
+.bmi-section {
+    padding: 100px 0;
+    background-color: #111;
+    background-image: url('../assets/hero_bg.png');
+    /* Reuse hero bg with heavy overlay? Or distinct gradient */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax effect */
+    position: relative;
+}
+
+.bmi-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    /* Heavy dark overlay */
+    z-index: 1;
+}
+
+.bmi-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.bmi-text {
+    flex: 1;
+}
+
+.bmi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bmi-table th,
+.bmi-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.bmi-table th {
+    color: var(--text-white);
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.bmi-table tr:hover {
+    background: rgba(229, 9, 20, 0.1);
+}
+
+.bmi-form-container {
+    flex: 1;
+    background: var(--bg-dark);
+    padding: 40px;
+    border-radius: 4px;
+    position: relative;
+    /* Gymcare style often puts this as a highlight box */
+}
+
+.bmi-desc {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.bmi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--text-white);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary-color);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.bmi-result {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    background: rgba(229, 9, 20, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--text-white);
+}
+
+.highlight-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.status-text {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Colors for status */
+.underweight {
+    color: #facc15;
+}
+
+.healthy {
+    color: #4ade80;
+}
+
+.overweight {
+    color: #fb923c;
+}
+
+.obese {
+    color: #f87171;
+}
+
+@media (min-width: 992px) {
+    .bmi-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-group-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

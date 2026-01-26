@@ -1,0 +1,106 @@
+.hero-section {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.sub-headline {
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.headline {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: var(--text-white);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.stroke-text {
+    /* Gymcare style outlined text */
+    -webkit-text-stroke: 2px var(--text-white);
+    color: transparent;
+}
+
+.cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-hero {
+    padding: 15px 40px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+    transition: all 0.3s;
+}
+
+.btn-hero.primary {
+    background: var(--primary-color);
+    color: var(--text-white);
+}
+
+.btn-hero.primary:hover {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+}
+
+.btn-hero.secondary {
+    background: transparent;
+    border: 2px solid var(--text-white);
+    color: var(--text-white);
+    /* Clip path might interfere with border, so using outline approach or slight mod */
+    clip-path: none;
+    border-radius: 0;
+}
+
+.btn-hero.secondary:hover {
+    background: var(--text-white);
+    color: var(--bg-dark);
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-hero {
+        width: 100%;
+        text-align: center;
+    }
+}

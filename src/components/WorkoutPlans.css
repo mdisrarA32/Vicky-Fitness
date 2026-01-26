@@ -1,0 +1,193 @@
+.workout-section {
+    padding: 100px 0;
+    background-color: var(--bg-dark);
+}
+
+.plan-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.plan-tab {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-white);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    /* Slightly sharp corners for professional look */
+    transition: all 0.3s;
+}
+
+.plan-tab:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.plan-tab.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--text-white);
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+}
+
+/* Pro Sub Tabs */
+.sub-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.sub-tab {
+    background: var(--bg-card);
+    border: none;
+    color: var(--text-gray);
+    padding: 10px 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.sub-tab:hover {
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sub-tab.active {
+    background: var(--secondary-color);
+    color: var(--bg-dark);
+}
+
+
+/* Plan Info Header */
+.plan-header-info {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.plan-info-item h4 {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.plan-info-item p {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.workout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.day-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.day-header {
+    background: rgba(255, 255, 255, 0.05);
+    /* Slightly lighter header */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.day-header h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.day-header span {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+.day-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.day-table th,
+.day-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}
+
+.day-table th {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.day-table td {
+    color: #ccc;
+}
+
+.day-table tr:last-child td {
+    border-bottom: none;
+}
+
+.day-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.plan-footer-notes {
+    margin-top: 50px;
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 992px) {
+    .plan-header-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plan-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .workout-grid {
+        grid-template-columns: 1fr;
+    }
+}
