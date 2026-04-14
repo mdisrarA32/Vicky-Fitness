@@ -13,8 +13,14 @@ const script2 = document.createElement("script");
 script2.innerHTML = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+
   gtag('js', new Date());
-  gtag('config', 'G-GF2V3VYMM9');
+
+  gtag('config', 'G-GF2V3VYMM9', {
+    debug_mode: true,
+    send_page_view: true
+  });
 `;
 document.head.appendChild(script2);
 // ✅ Google Analytics Code END
